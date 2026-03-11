@@ -52,8 +52,8 @@ export const Header = async () => {
         </div>
 
         {/* Middle: Search (takes all available space) */}
-        <div className="hidden md:flex flex-1 px-4">
-          <NavbarSearch className="w-full" />
+        <div className="hidden md:flex flex-1 px-4 justify-center">
+          <NavbarSearch className="w-full max-w-md" />
         </div>
 
         {/* Right: User controls */}

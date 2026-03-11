@@ -1,5 +1,6 @@
 import {
   BannerSection,
+  HeroSlider,
   BlogSection,
   Hero,
   HomeCategories,
@@ -160,6 +161,7 @@ export default async function Home({
         }}
       />
 
+      <HeroSlider />
       <Hero
         image="/images/hero/Image.jpg"
         heading="Snag your style in a flash"
