@@ -7,7 +7,7 @@ export const Navbar = ({
   categories: HttpTypes.StoreProductCategory[]
 }) => {
   return (
-    <div className="hidden md:flex border-b py-3 px-6">
+    <div className="hidden md:flex border-b py-3 px-6 justify-center">
       <CategoryNavbar categories={categories} />
     </div>
   )

@@ -26,7 +26,7 @@ export const MobileNavbar = ({
       <button
         onClick={() => setOpenMenu(true)}
         aria-label="Open menu"
-        className="flex items-center justify-center"
+        className="flex items-center justify-center md:hidden"
       >
         <HamburgerMenuIcon />
       </button>

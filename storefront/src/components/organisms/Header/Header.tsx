@@ -33,7 +33,7 @@ export const Header = async () => {
 
   return (
     <header>
-      <div className="flex py-2 lg:px-8 px-4 items-center">
+      <div className="flex py-2 lg:px-8 px-4 items-center border-b">
         {/* Left: Hamburger + Logo */}
         <div className="flex items-center gap-4 flex-shrink-0">
           <MobileNavbar
@@ -52,7 +52,7 @@ export const Header = async () => {
         </div>
 
         {/* Middle: Search (takes all available space) */}
-        <div className="hidden md:flex flex-1 px-6">
+        <div className="hidden md:flex flex-1 px-4">
           <NavbarSearch className="w-full" />
         </div>
 
