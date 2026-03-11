@@ -6,7 +6,7 @@ import { useSearchParams } from "next/navigation"
 import { useState } from "react"
 import { redirect } from "next/navigation"
 
-export const NavbarSearch = () => {
+export const NavbarSearch = ({ className }: { className?: string }) => {
   const searchParams = useSearchParams()
 
   const [search, setSearch] = useState(searchParams.get("query") || "")
@@ -21,7 +21,11 @@ export const NavbarSearch = () => {
   }
 
   return (
-    <form className="flex items-center" method="POST" onSubmit={submitHandler}>
+    <form
+      className={`flex items-center w-full ${className ?? ""}`}
+      method="POST"
+      onSubmit={submitHandler}
+    >
       <Input
         icon={<SearchIcon />}
         placeholder="Search product"
