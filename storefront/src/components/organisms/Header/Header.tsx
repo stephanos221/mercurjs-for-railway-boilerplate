@@ -1,7 +1,7 @@
 import Image from "next/image"
 import { HttpTypes } from "@medusajs/types"
 
-import { CartDropdown, MobileNavbar, Navbar } from "@/components/cells"
+import { CartDropdown, MobileNavbar } from "@/components/cells"
 import { HeartIcon, MessageIcon } from "@/icons"
 import { listCategories } from "@/lib/data/categories"
 import { PARENT_CATEGORIES } from "@/const"
@@ -14,6 +14,7 @@ import CountrySelector from "@/components/molecules/CountrySelector/CountrySelec
 import { listRegions } from "@/lib/data/regions"
 import LocalizedClientLink from "@/components/molecules/LocalizedLink/LocalizedLink"
 import { MessageButton } from "@/components/molecules/MessageButton/MessageButton"
+import { NavbarSearch } from "@/components/molecules"
 
 export const Header = async () => {
   const user = await retrieveCustomer()
@@ -36,8 +37,9 @@ export const Header = async () => {
 
   return (
     <header>
-      <div className="flex py-2 lg:px-8 px-4">
-        <div className="flex items-center lg:w-1/3 gap-4">
+      <div className="flex py-2 lg:px-8 px-4 items-center">
+        {/* Left: Hamburger + Logo */}
+        <div className="flex items-center gap-4 lg:w-1/3">
           <MobileNavbar
             parentCategories={parentCategories}
             childrenCategories={categories}
@@ -52,7 +54,14 @@ export const Header = async () => {
             />
           </LocalizedClientLink>
         </div>
-        <div className="flex items-center justify-end gap-2 lg:gap-4 w-full lg:w-2/3 py-2">
+
+        {/* Middle: Search */}
+        <div className="hidden md:flex justify-center lg:w-1/3 flex-1 px-4">
+          <NavbarSearch />
+        </div>
+
+        {/* Right: User controls */}
+        <div className="flex items-center justify-end gap-2 lg:gap-4 lg:w-1/3 py-2 ml-auto">
           <CountrySelector regions={regions} />
           {user && <MessageButton />}
           <UserDropdown user={user} />
@@ -66,11 +75,9 @@ export const Header = async () => {
               )}
             </LocalizedClientLink>
           )}
-
           <CartDropdown />
         </div>
       </div>
-      <Navbar categories={categories} />
     </header>
   )
 }
