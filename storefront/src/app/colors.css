@@ -1,6 +1,6 @@
 :root {
     /* Neutral colors are the foundation of the color system. Almost everything in UI design — text, fields, backgrounds, dividers — are usually gray. */
-    --neutral-0: 255, 255, 255;
+    --neutral-0: 255, 255, 227;
     --neutral-25: 247, 247, 247;
     --neutral-50: 238, 238, 238;
     --neutral-100: 226, 226, 226;
@@ -12,7 +12,7 @@
     --neutral-700: 38, 38, 38;
     --neutral-800: 27, 27, 27;
     --neutral-900: 22, 22, 22;
-    --neutral-1000: 9, 9, 9;
+    --neutral-1000: 16, 16, 14;
 
     /* Brand colors are used across all interactive elements such as buttons, links, inputs, etc. This color can define the overall feel and can elicit emotion. */
     --brand-25: 247, 247, 247;
